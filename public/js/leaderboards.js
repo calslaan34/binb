@@ -25,7 +25,7 @@
     $(this).scroll(function() {
       var diff = $(this).prop('scrollHeight') - $(this).scrollTop();
 
-      if (diff === $(this).height() && offset < 180) {
+      if (diff > $(this).height() - 2 && offset < 180) {
         offset += 30;
         $loading.show();
         $.get('/sliceleaderboard', { begin: offset, by: type }, function(data) {
